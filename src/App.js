@@ -1,6 +1,7 @@
 import "./App.scss";
 import { useState } from "react";
 import Search from "./components/Search";
+import Courses from "./components/Courses/Index";
 function App() {
   const courses = [
     {
@@ -48,43 +49,11 @@ function App() {
   }
   return (
     <div className="wrapperCurses">
-      <h1 className="title">Search curses</h1>
+      <h1 className="title">Search Courses</h1>
       <div className="wrapperInput">
         <Search handleCallback={handleChange} />
       </div>
-      <div className="wrapperCards">
-        {nameSearch.map(({ name, colorb, img, desc }, key) => {
-          return (
-            <div className="Card" key={key}>
-              <section
-                style={{
-                  backgroundColor: `#${colorb}`,
-                  width: `100%`,
-                  borderTopLeftRadius: `3rem`,
-                  borderTopRightRadius: `3rem`,
-                  height: `180px`,
-                  overflow: `hidden`,
-                }}
-              >
-                <img className="img" src={img} alt="img-curso" />
-              </section>
-              <section className="wrapperInfoCard">
-                <h2 className="titleCard">{name}</h2>
-                <p className="descriptionCard">{desc}</p>
-              </section>
-            </div>
-          );
-        })}
-        {/* <div className="Card">
-          <section className="wrapperImg">
-            <img className="imgCurse" src="" alt="imagenCurso" />
-          </section>
-          <section className="wrapperInfoCard">
-            <h2 className="titleCard">HTML Y CSS</h2>
-            <p className="descriptionCard"></p>
-          </section>
-        </div> */}
-      </div>
+      <Courses courses={nameSearch} />
     </div>
   );
 }

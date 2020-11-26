@@ -7,7 +7,7 @@ function Search({ handleCallback }) {
   return (
     <>
       <label>
-        <span className="subtitle">Curso</span>
+        <span className="subtitle">Course:</span>
         <input
           className="inputStyle"
           placeholder="buscar algun curso..."
